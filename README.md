@@ -57,3 +57,14 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Colori
+
+Primario: #302B27
+Secondario: #EFE9F4
+Accento: #149414
+
+## Font
+
+Font titoli: Space Grottesk /https://fonts.google.com/specimen/Space+Grotesk
+Font paragrafi: Inter /https://fonts.google.com/specimen/Inter

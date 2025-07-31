@@ -1,0 +1,14 @@
+<section>
+  <h2>Progetti</h2>
+  <p>Progetti caricati: {{ projectlist.length }}</p>
+  <div class="grid">
+    <app-card
+      *ngFor="let project of projectlist"
+      [title]="project.title"
+      [description]="project.description"
+      [image]="project.image"
+      [link]="project.link"
+    >
+    </app-card>
+  </div>
+</section>

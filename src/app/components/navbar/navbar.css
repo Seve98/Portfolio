@@ -1,0 +1,16 @@
+li>a{
+    font-weight: bold;
+    font-size: medium;
+}
+li>a:hover{
+ background-color: var(--ca);
+ border-radius: 50px;
+}
+.navbar{
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+   
+    z-index: 11;
+    
+}

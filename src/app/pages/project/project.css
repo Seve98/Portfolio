@@ -1,0 +1,5 @@
+.blur{
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
