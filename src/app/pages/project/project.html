@@ -1,13 +1,18 @@
-<section>
-  <h2>Progetti</h2>
-  <p>Progetti caricati: {{ projectlist.length }}</p>
-  <div class="grid">
+<section class="project-container">
+  <div class="section-title">
+    <h2>I Miei Progetti</h2>
+    <p>Questi sono alcuni dei progetti che ho realizzato</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mx-10">
     <app-card
       *ngFor="let project of projectlist"
       [title]="project.title"
       [description]="project.description"
+      [language]="project.languages"
       [image]="project.image"
       [link]="project.link"
+      [showBtn]="true"
     >
     </app-card>
   </div>

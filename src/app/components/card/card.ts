@@ -13,6 +13,9 @@ export class Card {
   @Input() description: string = '';
   @Input() image: string = '';
   @Input() link: string = '';
+  @Input() language: string = '';
+  @Input() showBtn: boolean = false;
+
   
 
 

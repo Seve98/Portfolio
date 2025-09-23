@@ -2,11 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
+@import "aos/dist/aos.css";
+
 
 :root{
 --cp:  #302B27;
 --cs:  #EFE9F4;
---ca:   #149414;
+/* --ca:   #de3163; */
+--ca:#FD6B11;
 --fp: 'Inter', sans-serif;
 --ft: 'Space Grotesk', sans-serif;
 }
@@ -34,15 +37,22 @@
 .fp{
     font-family: var(--fs);
 }
+html,body,.container{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 *{
     background-color: transparent;
     font-family: var(--fp);
     
 
 }
+
 body{
 color: var(--cs);
 overflow-x: hidden;
+height: 100%;
 }
 h1, h2, h3, h4, h5, h6{
     font-family: var(--ft);
@@ -53,6 +63,15 @@ h1, h2, h3, h4, h5, h6{
     background-color: var(--ca);
     border-radius: 50px;
 }
+.btn-custom:hover{
+  box-shadow: inset 40em 0 0 0 var(--cp);
+  border: solid 3px var(--ca);
+  transition: box-shadow 0.8s ease-in;
+  color: var(--ca);
+  font-weight: bold;
+  
+}
+
 .icon{
     width: 40px;
     height: 40px;
@@ -64,3 +83,49 @@ h1, h2, h3, h4, h5, h6{
     border-radius: 50px;
     
 }
+.bdf{
+    background-color: transparent;
+    backdrop-filter: black, blur(8px);
+     -webkit-backdrop-filter: blur(8px);
+}
+
+   .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--ca), var(--ca));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color:var(--cs);
+            opacity: 0.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+ @keyframes rotate-colors {
+            0% {
+                border-image: conic-gradient(from 0deg, var(--ca), #8b5cf6, #ec4899, var(--ca)) 1;
+            }
+            25% {
+                border-image: conic-gradient(from 90deg, var(--ca), #8b5cf6, #ec4899, var(--ca)) 1;
+            }
+            50% {
+                border-image: conic-gradient(from 180deg, var(--ca), #8b5cf6, #ec4899, var(--ca)) 1;
+            }
+            75% {
+                border-image: conic-gradient(from 270deg, var(--ca), #8b5cf6, #ec4899, var(--ca)) 1;
+            }
+            100% {
+                border-image: conic-gradient(from 360deg, var(--ca), #8b5cf6, #ec4899, var(--ca)) 1;
+            }
+        }

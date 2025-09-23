@@ -3,3 +3,16 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
+.project-container{
+    max-width: 1200px;
+    margin: 0 auto;
+            border-radius: 20px;
+            padding: 3rem;
+}
+@media screen and (max-width: 600px) {
+    .project-container{
+        padding: 0;
+        max-width: 800px;
+    }
+    
+}

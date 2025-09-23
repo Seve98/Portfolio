@@ -1,0 +1,7 @@
+footer{
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid var(--ca);
+    
+}

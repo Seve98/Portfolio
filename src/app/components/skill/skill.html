@@ -1,0 +1,42 @@
+<section>
+  <div class="grid grid-rows-1 justify-center">
+    <div class="grid grid-cols-1 @lg:my-20">
+      <h2 class="@lg:text-6xl text-3xl font-bold text-center mt-10">
+        Le Mie Skills
+      </h2>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 lg:mx-10 gap-6">
+    <!-- Ciclo sugli environment -->
+    <div *ngFor="let env of environment">
+      <!-- Card per l'environment -->
+      <app-card [showBtn]="false" data-aos="fade-up">
+        <h2 class="fw-bold cs text-center text-4xl">{{ env.name }}</h2>
+
+        <!-- Lista delle skills associate -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+          <ng-container *ngFor="let skill of getSkillsByEnv(env.name)">
+            <div data-aos="zoom-in" class="flex flex-col items-center p-2">
+              <img
+                *ngIf="skill.icon"
+                [src]="skill.icon"
+                [alt]="skill.name"
+                class="img_skill mb-2"
+              />
+              <h3 class="fw-bold text-sm font-medium">{{ skill.name }}</h3>
+              <p class="text-center my-2">{{ skill.description }}</p>
+              <div class="w-full my-auto bgs rounded-full h-2 overflow-hidden">
+                <div
+                  class="bga h-2 rounded-full transition-all duration-1000"
+                  [style.width.%]="skill.value"
+                ></div>
+              </div>
+              <p class="text-xs mt-1">{{ skill.value }}%</p>
+            </div>
+          </ng-container>
+        </div>
+      </app-card>
+    </div>
+  </div>
+</section>

@@ -1,1 +1,97 @@
-<p>contact-me works!</p>
+<div
+  class="max-w-xl mx-auto my-12 p-8 contact-box text-white rounded-2xl shadow-lg"
+>
+  <div
+    *ngIf="successMessage"
+    class="mt-6 p-4 text-center bg-green-600 text-white rounded-lg transition-opacity duration-1000"
+  >
+    {{ successMessage }}
+  </div>
+
+  <div
+    *ngIf="errorMessage"
+    class="mt-6 p-4 text-center bg-red-600 text-white rounded-lg transition-opacity duration-1000"
+  >
+    {{ errorMessage }}
+  </div>
+  <h2 class="text-3xl font-bold mb-2 text-center ca">Contattami</h2>
+  <p class="text-gray-400 mb-6 text-center cs">
+    Compila il form e riceverò direttamente la tua email 🚀
+  </p>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+    <!-- Nome -->
+    <div>
+      <label for="name" class="block text-sm font-medium mb-1 cs">Nome</label>
+      <input
+        id="name"
+        formControlName="name"
+        type="text"
+        placeholder="Il tuo nome"
+        class="w-full rounded-lg border border-gray-700 bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div
+        *ngIf="
+          contactForm.get('name')?.invalid && contactForm.get('name')?.touched
+        "
+        class="text-red-400 text-sm mt-1"
+      >
+        Il nome è obbligatorio.
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email" class="block text-sm font-medium mb-1 cs">Email</label>
+      <input
+        id="email"
+        formControlName="email"
+        type="email"
+        placeholder="La tua email"
+        class="w-full rounded-lg border border-gray-700 bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div
+        *ngIf="
+          contactForm.get('email')?.invalid && contactForm.get('email')?.touched
+        "
+        class="text-red-400 text-sm mt-1"
+      >
+        Inserisci una email valida.
+      </div>
+    </div>
+
+    <!-- Messaggio -->
+    <div>
+      <label for="message" class="block text-sm cs font-medium mb-1"
+        >Messaggio</label
+      >
+      <textarea
+        id="message"
+        formControlName="message"
+        rows="5"
+        placeholder="Scrivi qui il tuo messaggio"
+        class="w-full rounded-lg border border-gray-700 bg-gray-800 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      ></textarea>
+      <div
+        *ngIf="
+          contactForm.get('message')?.invalid &&
+          contactForm.get('message')?.touched
+        "
+        class="text-red-400 text-sm mt-1"
+      >
+        Il messaggio è obbligatorio.
+      </div>
+    </div>
+
+    <!-- Bottone -->
+    <button
+      type="submit"
+      [disabled]="contactForm.invalid"
+      class="w-full btn btn-custom"
+    >
+      Invia
+    </button>
+  </form>
+
+  <!-- Messaggi di successo / errore -->
+</div>

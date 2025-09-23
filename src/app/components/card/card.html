@@ -1,11 +1,21 @@
-<div class="card card-side bg-base-100 shadow-sm border mt-10">
+<div class="card mt-10">
   <div class="card-body">
-    <h2 class="card-title">{{ title }}</h2>
+    <h2 class="card-title @lg:text-xl">{{ title }}</h2>
     <p>{{ description }}</p>
+    <ng-content></ng-content>
 
-    <div class="card-actions justify-end">
+    <img class="img_card" [src]="image ? image : ''" />
+    <div class="lg:flex lg:gap-2 my-5">
+      <p *ngFor="let language of language" class="badge">{{ language }}</p>
+    </div>
+    <div
+      class="card-actions lg:justify-end justify-center"
+      *ngIf="showBtn && link"
+    >
       <a [href]="link" target="_blank"
-        ><button class="btn btn-custom">Vai al progetto</button></a
+        ><button class="btn btn-custom font-bold @lg:text-xl">
+          Vai al progetto ➮
+        </button></a
       >
     </div>
   </div>

@@ -13,4 +13,7 @@ export class Github {
   getRepos(): Observable<any[]>{
     return this.http.get<any[]>(this.GITHUB_API)
   }
+  getLanguages(url:string){
+    return this.http.get<any>(url)
+  }
 }
