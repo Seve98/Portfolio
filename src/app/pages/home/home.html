@@ -1,8 +1,6 @@
-<div class="@container">
+<div class="@container pt-20" id="landing">
   <div class="grid grid-rows-1 justify-center align-center @lg:my-20">
-    <div
-      class="flex flex-col-reverse lg:grid @xs:grid-cols-1 @lg:grid-cols-2 @lg:justify-center @lg:text-center"
-    >
+    <div class="grid grid-cols-1 lg:grid-cols-2 justify-center align-center">
       <div
         data-aos="fade-right"
         data-aos-delay="1000"
@@ -10,35 +8,118 @@
       >
         <div class="flex align-center flex-col justify-center my-10">
           <h2
-            class="@lg:text-start @lg:ms-50 @lg:text-4xl mx-auto text-center px-2 text-[20px]"
+            class="@lg:text-start @lg:ms-50 @lg:text-2xl ca mx-auto text-center text-[20px]"
           >
-            Ciao, sono <strong class="ca">Severino Santalucia</strong> 👋 <br />
-            Sono uno
-            <strong class="ca">Junior Web Developer</strong>
-            appassionato di tecnologia, design e sviluppo front-end. Costruisco
-            applicazioni web moderne, accessibili e performanti con Angular.
+            Ciao, sono <br />
+            <strong class="cs font-semibold @sm:text-xl @md:text-8xl"
+              >Severino Santalucia</strong
+            >
           </h2>
-          <h3
-            class="@lg:ms-50 @lg:text-4xl mt-20 @lg:text-start text-center text-3xl"
+          <h2
+            class="@lg:text-start @lg:ms-50 @lg:text-2xl ca mx-auto text-center text-[20px]"
           >
-            Scopri di più su di me e sui miei progetti!
-          </h3>
+            <strong class="text-gradient glitch-text text-4xl"
+              >Junior Web Developer</strong
+            >
+          </h2>
 
-          <a
-            class="btn btn-custom mt-5 @lg:text-2xl text-xl @lg:ms-50 @lg:py-6 py-5 mx-20 flex justify-center align-center"
-            href="project"
+          <p
+            class="@lg:ms-50 @lg:text-start text-center mt-10 text-gray-400 @md:text-xl"
           >
-            Guarda Ora 👉
-          </a>
+            Appassionato di tecnologia, design e sviluppo front-end. Costruisco
+            applicazioni web moderne, accessibili e performanti con Angular e
+            React.
+          </p>
+
+          <div class="flex gap-5 @sm:mx-auto @lg:ms-50 m-8">
+            <a
+              href="https://github.com/Seve98"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-3 rounded-full glass hover:scale-110 transition-transform"
+              aria-label="GitHub"
+            >
+              <lucide-angular
+                [img]="Github"
+                size="20"
+                class="my-icon"
+              ></lucide-angular>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/severinosantalucia-dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-3 rounded-full glass hover:scale-110 transition-transform"
+              aria-label="LinkedIn"
+            >
+              <lucide-angular
+                [img]="Linkedin"
+                class="my-icon rounded"
+                size="20"
+              ></lucide-angular>
+            </a>
+            <a
+              href="#contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-3 rounded-full glass hover:scale-110 transition-transform"
+              aria-label="Email"
+            >
+              <lucide-angular
+                [img]="Mail"
+                class="my-icon rounded"
+                size="20"
+              ></lucide-angular>
+            </a>
+          </div>
+
+          <div
+            class="flex @sm:justify-center @md:justify-start gap-5 @lg:ms-50 flex-wrap"
+          >
+            <a href="#skill" class="btn btn-custom2">Scopri le mie Skills</a>
+            <a href="#projects" class="btn btn-custom">Vai ai Progetti</a>
+          </div>
         </div>
       </div>
       <div
         data-aos="fade-left"
         class="flex justify-center align-center @lg:my-40"
       >
-        <img class="profile-photo" src="/foto profilo portfolio.jpeg" alt="" />
+        <div class="relative group">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"
+          ></div>
+          <img
+            class="profile-photo animate-float relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] object-cover rounded-full border-4 border-gray-800 shadow-2xl"
+            src="/foto professionale1.png"
+            alt="Severino Santalucia - Junior Web Developer"
+          />
+        </div>
       </div>
     </div>
   </div>
-  <app-skill></app-skill>
 </div>
+
+<!-- About Me Section -->
+<section id="about-me" class="min-h-screen py-20 scroll-section">
+  <app-about-me />
+</section>
+
+<!-- Skills Section -->
+<section id="skill" class="min-h-screen py-20 scroll-section">
+  <app-skill />
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="min-h-screen py-20 scroll-section">
+  <app-project />
+</section>
+<!-- Services Section -->
+<section id="service" class="min-h-screen py-20 scroll-section">
+  <app-service />
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="min-h-screen py-20 scroll-section">
+  <app-contact-me />
+</section>

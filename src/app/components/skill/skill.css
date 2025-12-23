@@ -2,6 +2,11 @@
         width: 80px;
         height: 80px;
     }
+    .glass:hover{
+       
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--cap);
+    }
     
 
   

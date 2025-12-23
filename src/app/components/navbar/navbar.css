@@ -4,8 +4,9 @@ li>a{
     text-align: center;
 }
 li>a:hover{
- background-color: var(--ca);
+color: var(--cap);
  border-radius: 50px;
+ background-color: transparent;
 }
 .navbar{
     background-color: transparent;
@@ -13,6 +14,13 @@ li>a:hover{
     -webkit-backdrop-filter: blur(8px);
     z-index: 11;
     
+}
+.btn {
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: none;
+    box-shadow: none;
 }
 .dropdown-content{
     position: relative;

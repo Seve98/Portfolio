@@ -5,7 +5,13 @@ border: 5px dotted var(--ca);
 border-radius: 50%;
 }
 
-
+#landing{
+      background: radial-gradient(ellipse at center, hsl(var(--ca) / 0.15) 0%, transparent 70%);
+     
+}
+h1,h2{
+    color: hsl(var(--ca) );
+}
 
 
 

@@ -1,120 +1,53 @@
-<section class="chi-sono-card flex justify-center">
-  <div class="grid grid-container justify-center">
-    <div class="grid-rows-1 justify-center">
-      <div class="grid @lg:grid-cols-1 @xs:grid-cols-1 mx-10 justify-center">
-        <div class="justify-center align-center items-center">
-          <img
-            class="profile-photo"
-            data-aos="zoom-in"
-            data-aos-delay="200"
-            src="/foto profilo portfolio.jpeg"
-            alt="Severino Santalucia"
-          />
-        </div>
-      </div>
-      <div class="grid-cols-1 justify-center text-center">
-        <h2
-          class="@lg:text-5xl text-4xl font-bold text-center mt-5 ca lg:mt-10"
-          data-aos="fade-up"
-          data-aos-delay="500"
-        >
-          Chi Sono
-        </h2>
-        <h3
-          class="lg:text-4xl sm:text-3xl"
-          data-aos="fade-up"
-          data-aos-delay="1000"
-        >
-          Severino Santalucia
-        </h3>
-        <h4
-          class="lg:text-3xl sm:text-2xl"
-          data-aos="fade-up"
-          data-aos-delay="1500"
-        >
-          Junior Full-Stack Web Developer
-        </h4>
-        <h5
-          class="lg:text-2xl sm:text-xl"
-          data-aos="fade-up"
-          data-aos-delay="2000"
-        >
-          📍Lucera, (Fg), Italia
-        </h5>
-      </div>
-    </div>
-    <div class="grid grid-rows-2 lg:mt-45">
-      <div class="grid grid-cols-1 lg:grid-cols-2 mt-10">
-        <div class="my-auto">
-          <p
-            data-aos="fade-right"
-            data-aos-delay="300"
-            class="lg:text-4xl text-2xl text-center"
-          >
-            Ciao! Sono uno
-            <strong class="ca">Sviluppatore Web</strong> appassionato che ha
-            recentemente completato il percorso formativo intensivo presso
-            Hackademy+, il bootcamp di eccellenza di Aulab che mi ha fornito le
-            competenze più richieste nel mondo dello sviluppo web moderno.
-          </p>
-        </div>
-
-        <div class="justify-center align-center items-center">
-          <img
-            data-aos="fade-left"
-            data-aos-delay="1000"
-            class="cert lg:img-about"
-            src="/img/about_me_img/Certificato.png"
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="grid lg:grid-cols-2 mt-20">
-        <div>
-          <img
-            class="code img-about"
-            src="/img/about_me_img/coding.png"
-            alt="Immagine di sviluppo web"
-            data-aos="fade-right"
-            data-aos-delay="500"
-          />
-        </div>
-        <div class="lg:my-auto" data-aos="fade-left" data-aos-delay="500">
-          <p class="lg:text-4xl text-2xl my-10 text-center">
-            La mia passione per il coding nasce dalla possibilità di
-            <strong class="ca">
-              trasformare idee in soluzioni digitali concrete</strong
-            >. Ogni progetto rappresenta per me una nuova sfida da affrontare
-            con creatività e determinazione.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div
-      data-aos="fade-up"
-      data-aos-delay="1000"
-      class="grid grid-cols-1 box_container justify-center align-center"
-    >
-      <h2 class="@lg:text-5xl text-3xl font-bold text-center fw-bold mt-10">
-        Costruiamo qualcosa di Grande Insieme!
+<section id="chi-sono" class="py-24 p-5 relative flex justify-center bgp">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-6xl font-bold mb-4">
+        Chi <span class="text-gradient">Sono</span>
       </h2>
-      <p class="text-center mt-5 text-xl">
-        Sono sempre alla ricerca di nuove opportunità e progetti stimolanti. Che
-        si tratti di collaborazioni, opportunità lavorative o semplicemente una
-        chiacchierata sul mondo del web development.
+      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+        Un developer appassionato che trasforma idee in esperienze digitali
       </p>
-      <div class="lg:flex grid justify-center align-center my-10">
-        <a class="btn btn-custom text-xl my-2 lg:my-0 lg:mx-5" href="contact"
-          >Scrivimi! 📧
-        </a>
-        <a class="btn btn-custom text-xl" href="project">Vedi i progetti 👉</a>
-        <a
-          class="btn btn-custom text-xl my-2 lg:my-0 lg:mx-5"
-          href="pdf/CV_Severino_Santalucia.pdf"
-          download="Severino Santalucia CV"
-          >Scarica CV 📄</a
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <p class="text-muted-foreground leading-relaxed">
+          Sono un Junior Web Developer con una forte passione per lo sviluppo
+          front-end e il design UI/UX. Mi dedico alla creazione di applicazioni
+          web moderne utilizzando le tecnologie più recenti come Angular, React
+          e TypeScript.
+        </p>
+        <p class="text-muted-foreground leading-relaxed">
+          Il mio obiettivo è creare esperienze utente eccezionali che siano non
+          solo esteticamente piacevoli, ma anche funzionali e accessibili a
+          tutti gli utenti.
+        </p>
+        <p class="text-muted-foreground leading-relaxed">
+          Sono sempre alla ricerca di nuove sfide e opportunità per crescere
+          professionalmente e contribuire a progetti innovativi.
+        </p>
+      </div>
+
+      <div class="grid gap-6">
+        <div
+          *ngFor="let feature of features; let i = index"
+          class="glass rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:translate-x-2"
+          [style.animation-delay]="i * 100 + 'ms'"
         >
+          <div class="flex items-start gap-4">
+            <div class="p-3 rounded-lg bg-primary/10 text-primary text-2xl">
+              {{ getIconClass(feature.icon) }}
+            </div>
+            <div>
+              <h3 class="font-semibold text-foreground mb-1">
+                {{ feature.title }}
+              </h3>
+              <p class="text-muted-foreground text-sm">
+                {{ feature.description }}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

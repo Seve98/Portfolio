@@ -4,7 +4,7 @@ import { Card } from '../card/card';
 
 @Component({
   selector: 'app-skill',
-  imports: [CommonModule,Card],
+  imports: [CommonModule],
   templateUrl: './skill.html',
   styleUrl: './skill.css',
 
