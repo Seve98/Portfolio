@@ -29,7 +29,7 @@ this.contactForm=this.fb.group({
         'service_1gg5znw',
         'template_jeo991g',
         {name,email,message},
-        'oGr5I6SMEWP7tVR9E'
+        'Qoo9Ur-OxpeeUAHY_'
       ).then(()=>{
         this.successMessage='Messaggio inviato con successo!';
         this.errorMessage='';
