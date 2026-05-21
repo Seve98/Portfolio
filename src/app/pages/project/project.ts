@@ -17,7 +17,7 @@ export default class Project implements OnInit {
   private projectLinks: { [key: string]: string } = {
     Portfolio: 'https://severino-santalucia-portfolio.vercel.app',
     DigitalQuest: 'https://digital-quest-omega.vercel.app/',
-    Petti: 'https://www.pettibeverage.com/',
+    'Petti Beverage': 'https://www.pettibeverage.com/',
   };
 
   constructor(private github: Github) {}
