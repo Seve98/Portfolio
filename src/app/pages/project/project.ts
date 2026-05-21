@@ -8,16 +8,16 @@ import { Github } from '../../services/github';
   standalone: true, // Se usi Angular 19+, assicurati che sia standalone o importato correttamente
   imports: [CommonModule, Card],
   templateUrl: './project.html',
-  styleUrl: './project.css'
+  styleUrl: './project.css',
 })
 export default class Project implements OnInit {
   projectlist: any[] = [];
 
   // Mappa dei link custom per ogni progetto
   private projectLinks: { [key: string]: string } = {
-    'Portfolio': 'https://severino-santalucia-portfolio.vercel.app',
-    'DigitalQuest': 'https://digital-quest-omega.vercel.app/',
-
+    Portfolio: 'https://severino-santalucia-portfolio.vercel.app',
+    DigitalQuest: 'https://digital-quest-omega.vercel.app/',
+    Petti: 'https://www.pettibeverage.com/',
   };
 
   constructor(private github: Github) {}
@@ -27,21 +27,22 @@ export default class Project implements OnInit {
     this.github.getProjects().subscribe({
       next: (projects) => {
         // Qui aggiungiamo solo le info specifiche della UI che non vogliamo in cache
-        this.projectlist = projects.map(repo => ({
+        this.projectlist = projects.map((repo) => ({
           ...repo,
           image: `/img/${repo.title}.png`,
-          projectLink: this.getProjectLink(repo.title)
+          projectLink: this.getProjectLink(repo.title),
         }));
       },
       error: (err) => {
-        console.error("Errore nel caricamento dei progetti:", err);
-
-      }
+        console.error('Errore nel caricamento dei progetti:', err);
+      },
     });
   }
 
   private getProjectLink(repoName: string): string {
     // Restituisce il link custom se esiste, altrimenti il link alla repo GitHub
-    return this.projectLinks[repoName] || `https://github.com/Seve98/${repoName}`;
+    return (
+      this.projectLinks[repoName] || `https://github.com/Seve98/${repoName}`
+    );
   }
 }
